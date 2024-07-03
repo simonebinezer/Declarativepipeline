@@ -1,10 +1,37 @@
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+pipeline {
+    agent any
 
-public class HelloWorldTest {
-    @Test
-    public void testSayHello() {
-        HelloWorld helloWorld = new HelloWorld();
-        assertEquals("Hello, World!", helloWorld.sayHello());
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    echo 'Checkout step'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    echo 'Build step'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    echo 'Test step'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    echo 'Deploy step'
+                }
+            }
+        }
     }
 }
