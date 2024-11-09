@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    echo 'Checkout step'
-                }
+                git branch: 'main', url: 'https://github.com/simonebinezer/Declarativepipeline.git'
             }
         }
 
